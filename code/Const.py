@@ -1,7 +1,8 @@
 
 # M
-MENU_OPTION = ('NEW GAME',
-               'SCORE',
+MENU_OPTION = ('NEW GAME 1P',
+               'NEW GAME 2P',
+               'SCOREBOARD',
                'EXIT')
 
 # W

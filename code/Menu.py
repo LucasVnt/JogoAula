@@ -13,23 +13,41 @@ class Menu:
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
+        menu_option = 0
         pygame.mixer_music.load('./asset/menubmg.mp3')
         pygame.mixer_music.play(-1)
         while True:
+            # Draw
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "Space Wars", (245,245, 245), ((WIN_WIDTH / 2), 50))
 
             for i in range(len(MENU_OPTION)):
-                self.menu_text(25, MENU_OPTION[i], (245,245,245), ((WIN_WIDTH / 2), 230 + 30 * i))
-
+                if i == menu_option:
+                    self.menu_text(20, MENU_OPTION[i], (245, 245, 0), ((WIN_WIDTH / 2), 200 + 30 * i))
+                else:
+                    self.menu_text(20, MENU_OPTION[i], (245,245,245), ((WIN_WIDTH / 2), 200 + 30 * i))
             pygame.display.flip()
 
-            # Check for all events
+            # Check for events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()  # close window
                     quit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_DOWN:
+                        if menu_option < len(MENU_OPTION) - 1:
+                            menu_option += 1
+                        else:
+                            menu_option = 0
+                    if event.key == pygame.K_UP:
+                        if menu_option > 0:
+                            menu_option -= 1
+                        else:
+                            menu_option = len(MENU_OPTION) - 1
+                    if event.key == pygame.K_RETURN:
+                        return MENU_OPTION[menu_option]
 
+    # Font
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Times New Roman", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
