@@ -2,7 +2,7 @@ import sys
 
 import pygame
 
-from code.Const import WIN_HEIGHT, MENU_OPTION
+from code.Const import WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
 
@@ -19,6 +19,7 @@ class Level:
         self.entity_list.append(EntityFactory.get_entity('Player1'))
         if game_mode in [MENU_OPTION[1]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
+        pygame.time.set_timer(EVENT_ENEMY, 1000)
 
 
     def run(self):
@@ -34,6 +35,8 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == EVENT_ENEMY:
+                    self.entity_list.append(EntityFactory.get_entity('Enemy1'))
 
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', (245, 245, 245), (10, 5))
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', (245, 245, 245), (10, WIN_HEIGHT - 35))

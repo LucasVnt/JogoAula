@@ -1,6 +1,6 @@
 # E
 import pygame
-
+EVENT_ENEMY = pygame.USEREVENT + 1
 ENTITY_SPEED = {
     'Levelbg0' : 0,
     'Levelbg1' : 1,
@@ -9,6 +9,9 @@ ENTITY_SPEED = {
     'Levelbg4' : 4,
     'Player1' : 4,
     'Player2' : 4,
+    'Enemy1' : 4,
+    'Enemy2' : 3,
+    'Enemy3' : 2,
 }
 
 # M
