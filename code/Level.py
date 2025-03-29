@@ -1,4 +1,6 @@
+import random
 import sys
+from random import choice
 
 import pygame
 
@@ -36,7 +38,8 @@ class Level:
                     pygame.quit()
                     sys.exit()
                 if event.type == EVENT_ENEMY:
-                    self.entity_list.append(EntityFactory.get_entity('Enemy1'))
+                    choice = random.choice(('Enemy1', 'Enemy2'))
+                    self.entity_list.append(EntityFactory.get_entity(choice))
 
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', (245, 245, 245), (10, 5))
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', (245, 245, 245), (10, WIN_HEIGHT - 35))
