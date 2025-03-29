@@ -1,4 +1,5 @@
 from code.Background import Background
+from code.Const import WIN_WIDTH
 
 
 class EntityFactory:
@@ -9,5 +10,6 @@ class EntityFactory:
             case 'Levelbg':
                 list_bg = []
                 for i in range(5):
-                    list_bg.append(Background(f'Levelbg{i}', (0,0)))
+                    list_bg.append(Background(f'Levelbg{i}', (0, 0)))
+                    list_bg.append(Background(f'Levelbg{i}', (0, -320)))
                 return list_bg
