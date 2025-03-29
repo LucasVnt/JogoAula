@@ -9,12 +9,12 @@ class Menu:
 
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/Backgroundmenu.png')
+        self.surf = pygame.image.load('./asset/Backgroundmenu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
         menu_option = 0
-        pygame.mixer_music.load('./asset/menubmg.mp3')
+        pygame.mixer_music.load('./asset/Menubgm.mp3')
         pygame.mixer_music.play(-1)
         while True:
             # Draw
