@@ -2,7 +2,7 @@ import sys
 
 import pygame
 
-from code.Const import WIN_HEIGHT
+from code.Const import WIN_HEIGHT, MENU_OPTION
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
 
@@ -10,13 +10,16 @@ from code.Entity import Entity
 class Level:
 
     def __init__(self, window, name, game_mode):
+        self.timeout = 20000
         self.window = window
         self.name = name
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Levelbg'))
         self.entity_list.append(EntityFactory.get_entity('Player1'))
-        self.timeout = 20000
+        if game_mode in [MENU_OPTION[1]]:
+            self.entity_list.append(EntityFactory.get_entity('Player2'))
+
 
     def run(self):
         pygame.mixer_music.load('./asset/Levelbgm.mp3')
