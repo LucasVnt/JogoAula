@@ -7,6 +7,7 @@ import pygame
 from code.Const import WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
+from code.EntityMediator import EntityMediator
 
 
 class Level:
@@ -41,10 +42,15 @@ class Level:
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
+            #Text Font
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', (245, 245, 245), (10, 5))
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', (245, 245, 245), (10, WIN_HEIGHT - 35))
             self.level_text(14, f'entidades: {len(self.entity_list)}', (245, 245, 245), (10, WIN_HEIGHT - 20))
             pygame.display.flip()
+
+            EntityMediator.verify_collision(entity_list=self.entity_list)
+            EntityMediator.verify_health(entity_list=self.entity_list)
+
         pass
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):

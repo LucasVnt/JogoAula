@@ -7,6 +7,4 @@ class Enemy(Entity):
         super().__init__(name, position)
 
     def move(self, ):
-        self.rect.centery += ENTITY_SPEED[self.name] # BG SPEED
-        if self.rect.top >= WIN_HEIGHT:
-            self.rect.bottom = 0
+        self.rect.centery += ENTITY_SPEED[self.name]  # Enemy Speed

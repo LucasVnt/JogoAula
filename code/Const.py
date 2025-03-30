@@ -1,5 +1,21 @@
 # E
 import pygame
+
+ENTITY_HEALTH = {
+    'Levelbg0' : 999,
+    'Levelbg1' : 999,
+    'Levelbg2' : 999,
+    'Levelbg3' : 999,
+    'Levelbg4' : 999,
+    'Player1' : 100,
+    'Player2' : 100,
+    'Enemy1' : 10,
+    'Enemy2' : 30,
+    'Enemy3' : 50,
+    'Enemy4' : 999,
+
+}
+
 EVENT_ENEMY = pygame.USEREVENT + 1
 ENTITY_SPEED = {
     'Levelbg0' : 0,
