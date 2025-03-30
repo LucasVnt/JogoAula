@@ -34,9 +34,9 @@ ENTITY_HEALTH = {
     'Levelbg2' : 999,
     'Levelbg3' : 999,
     'Levelbg4' : 999,
-    'Player1' : 300,
+    'Player1' : 500,
     'Player1Shot': 1,
-    'Player2' : 300,
+    'Player2' : 500,
     'Player2Shot': 1,
     'Enemy1' : 25,
     'Enemy1Shot': 1,
@@ -67,6 +67,8 @@ ENTITY_SCORE = {
 }
 
 EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_TIMEOUT = pygame.USEREVENT + 2
+
 ENTITY_SPEED = {
     'Levelbg0' : 0,
     'Levelbg1' : 1,
@@ -93,6 +95,8 @@ ENTITY_SHOT_DELAY = {
     'Enemy2': 80,
     'Enemy3': 100,
 }
+
+
 
 # M
 MENU_OPTION = ('NEW GAME 1P',
