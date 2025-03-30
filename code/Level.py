@@ -11,6 +11,7 @@ from code.EntityMediator import EntityMediator
 from code.Player import Player
 from code.Enemy import Enemy
 
+
 class Level:
 
     def __init__(self, window, name, game_mode):
@@ -25,7 +26,6 @@ class Level:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
         pygame.time.set_timer(EVENT_ENEMY, 1000)
 
-
     def run(self):
         pygame.mixer_music.load('./asset/Levelbgm.mp3')
         pygame.mixer_music.play(-1)
@@ -38,7 +38,14 @@ class Level:
                 if isinstance(ent, (Player, Enemy)):
                     shoot = ent.shoot()
                     if shoot is not None:
+                        # Shoot soundFX here
                         self.entity_list.append(shoot)
+                if ent.name == 'Player1':
+                    self.level_text(14, f'Player1 - Health: {ent.health} | Score: {ent.score}', (100, 100, 128),
+                                    (10, 25))
+                if ent.name == 'Player2':
+                    self.level_text(14, f'Player2 - Health: {ent.health} | Score: {ent.score}', (128, 100, 100),
+                                    (10, 45))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -47,7 +54,7 @@ class Level:
                     choice = random.choice(('Enemy1', 'Enemy2', 'Enemy3'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
-            #Text Font
+            # Text Font
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', (245, 245, 245), (10, 5))
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', (245, 245, 245), (10, WIN_HEIGHT - 35))
             self.level_text(14, f'entidades: {len(self.entity_list)}', (245, 245, 245), (10, WIN_HEIGHT - 20))

@@ -38,14 +38,32 @@ ENTITY_HEALTH = {
     'Player1Shot': 1,
     'Player2' : 300,
     'Player2Shot': 1,
-    'Enemy1' : 50,
+    'Enemy1' : 25,
     'Enemy1Shot': 1,
-    'Enemy2' : 100,
+    'Enemy2' : 75,
     'Enemy2Shot': 1,
-    'Enemy3' : 200,
+    'Enemy3' : 125,
     'Enemy3Shot': 1,
     'Asteroid' : 999,
 
+}
+
+ENTITY_SCORE = {
+    'Levelbg0' : 0,
+    'Levelbg1' : 0,
+    'Levelbg2' : 0,
+    'Levelbg3' : 0,
+    'Levelbg4' : 0,
+    'Player1' : 0,
+    'Player1Shot': 0,
+    'Player2' : 0,
+    'Player2Shot': 0,
+    'Enemy1' : 10,
+    'Enemy1Shot': 0,
+    'Enemy2' : 50,
+    'Enemy2Shot': 0,
+    'Enemy3' : 100,
+    'Enemy3Shot' : 0,
 }
 
 EVENT_ENEMY = pygame.USEREVENT + 1
