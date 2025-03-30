@@ -33,10 +33,10 @@ ENTITY_SPEED = {
     'Player2' : 4,
     'Player2Shot': 8,
     'Enemy1' : 4,
-    'Enemy1Shot': 6,
-    'Enemy2' : 3,
-    'Enemy2Shot': 4,
-    'Enemy3' : 2,
+    'Enemy1Shot': 5,
+    'Enemy2' : 2,
+    'Enemy2Shot': 3,
+    'Enemy3' : 1,
     'Enemy3Shot' : 2,
 
 }
@@ -44,9 +44,9 @@ ENTITY_SPEED = {
 ENTITY_SHOT_DELAY = {
     'Player1' : 15,
     'Player2' : 15,
-    'Enemy1': 30,
-    'Enemy2': 40,
-    'Enemy3': 50,
+    'Enemy1': 50,
+    'Enemy2': 80,
+    'Enemy3': 100,
 }
 
 # M
