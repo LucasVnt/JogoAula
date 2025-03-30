@@ -1,5 +1,32 @@
-# E
 import pygame
+
+# C
+
+C_WHITE = (245,245,245)
+C_YELLOW = (255,255,0)
+C_GREEN = (0,128,0)
+C_CYAN = (0,128,128)
+
+# E
+
+ENTITY_DAMAGE = {
+    'Levelbg0' : 0,
+    'Levelbg1' : 0,
+    'Levelbg2' : 0,
+    'Levelbg3' : 0,
+    'Levelbg4' : 0,
+    'Player1' : 1,
+    'Player1Shot': 25,
+    'Player2' : 1,
+    'Player2Shot': 25,
+    'Enemy1' : 100,
+    'Enemy1Shot': 25,
+    'Enemy2' : 100,
+    'Enemy2Shot': 50,
+    'Enemy3' : 100,
+    'Enemy3Shot': 100,
+    'Asteroid' : 300,
+}
 
 ENTITY_HEALTH = {
     'Levelbg0' : 999,
@@ -7,16 +34,16 @@ ENTITY_HEALTH = {
     'Levelbg2' : 999,
     'Levelbg3' : 999,
     'Levelbg4' : 999,
-    'Player1' : 10,
+    'Player1' : 300,
     'Player1Shot': 1,
-    'Player2' : 10,
+    'Player2' : 300,
     'Player2Shot': 1,
-    'Enemy1' : 1,
+    'Enemy1' : 50,
     'Enemy1Shot': 1,
-    'Enemy2' : 3,
-    'Enemy2Shot': 3,
-    'Enemy3' : 5,
-    'Enemy3Shot': 5,
+    'Enemy2' : 100,
+    'Enemy2Shot': 1,
+    'Enemy3' : 200,
+    'Enemy3Shot': 1,
     'Asteroid' : 999,
 
 }
@@ -32,8 +59,8 @@ ENTITY_SPEED = {
     'Player1Shot': 8,
     'Player2' : 4,
     'Player2Shot': 8,
-    'Enemy1' : 4,
-    'Enemy1Shot': 12,
+    'Enemy1' : 3,
+    'Enemy1Shot': 4,
     'Enemy2' : 2,
     'Enemy2Shot': 3,
     'Enemy3' : 1,
