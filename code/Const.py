@@ -118,3 +118,20 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 # W
 WIN_WIDTH = 320
 WIN_HEIGHT = 320
+
+# S
+SCORE_POS = {'Title': (160, 40),
+             'EnterName': (WIN_WIDTH / 2, 60),
+             'Label': (WIN_WIDTH / 2, 80),
+             'Name': (WIN_WIDTH / 2, 100),
+             0: (WIN_WIDTH / 2, 100),
+             1: (WIN_WIDTH / 2, 120),
+             2: (WIN_WIDTH / 2, 140),
+             3: (WIN_WIDTH / 2, 160),
+             4: (WIN_WIDTH / 2, 180),
+             5: (WIN_WIDTH / 2, 200),
+             6: (WIN_WIDTH / 2, 220),
+             7: (WIN_WIDTH / 2, 240),
+             8: (WIN_WIDTH / 2, 260),
+             9: (WIN_WIDTH / 2, 280),
+             }

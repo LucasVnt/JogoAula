@@ -3,7 +3,7 @@ import sys
 from random import choice
 
 import pygame
-from pygame import SurfaceType
+from pygame import Surface
 
 from code.Const import WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, EVENT_TIMEOUT
 from code.EntityFactory import EntityFactory
@@ -15,8 +15,8 @@ from code.Enemy import Enemy
 
 class Level:
 
-    def __init__(self, window, name: str, game_mode: str, player_score: list[int]):
-        self.timeout = 30000
+    def __init__(self, window: Surface, name: str, game_mode: str, player_score: list[int]):
+        self.timeout = 60000
         self.window = window
         self.name = name
         self.game_mode = game_mode
@@ -25,7 +25,6 @@ class Level:
         player = EntityFactory.get_entity('Player1')
         player.score = player_score[0]
         self.entity_list.append(player)
-        # self.entity_list.append(EntityFactory.get_entity('Player1'))
         if game_mode in [MENU_OPTION[1]]:
             player = EntityFactory.get_entity('Player2')
             player.score = player_score[1]
@@ -49,10 +48,10 @@ class Level:
                         self.entity_list.append(shoot)
                 if ent.name == 'Player1':
                     self.level_text(14, f'Player1 - Health: {ent.health} | Score: {ent.score}', (100, 100, 128),
-                                    (10, 25))
+                                    (10, 15))
                 if ent.name == 'Player2':
                     self.level_text(14, f'Player2 - Health: {ent.health} | Score: {ent.score}', (128, 100, 100),
-                                    (10, 45))
+                                    (10, 25))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -92,7 +91,7 @@ class Level:
         pass
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
-        text_font: Font = pygame.font.SysFont(name="Times New Roman", size=text_size)
+        text_font: Font = pygame.font.SysFont(name="Franklin Gothic", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(left=text_pos[0], top=text_pos[1])
         self.window.blit(source=text_surf, dest=text_rect)

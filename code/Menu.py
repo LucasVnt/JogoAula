@@ -19,13 +19,13 @@ class Menu:
         while True:
             # Draw
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Space Wars", (245,245, 245), ((WIN_WIDTH / 2), 50))
+            self.menu_text(60, "Space Wars", (245,245, 245), ((WIN_WIDTH / 2), 50))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], (245, 245, 0), ((WIN_WIDTH / 2), 200 + 30 * i))
+                    self.menu_text(25, MENU_OPTION[i], (245, 245, 0), ((WIN_WIDTH / 2), 220 + 20 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], (245,245,245), ((WIN_WIDTH / 2), 200 + 30 * i))
+                    self.menu_text(25, MENU_OPTION[i], (245,245,245), ((WIN_WIDTH / 2), 220 + 20 * i))
             pygame.display.flip()
 
             # Check for events
@@ -49,7 +49,7 @@ class Menu:
 
     # Font
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
-        text_font: Font = pygame.font.SysFont(name="Times New Roman", size=text_size)
+        text_font: Font = pygame.font.SysFont(name="Franklin Gothic", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)
