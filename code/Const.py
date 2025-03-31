@@ -1,14 +1,12 @@
 import pygame
 
 # C
-
 C_WHITE = (245,245,245)
 C_YELLOW = (255,255,0)
 C_GREEN = (0,128,0)
 C_CYAN = (0,128,128)
 
 # E
-
 ENTITY_DAMAGE = {
     'Levelbg0' : 0,
     'Levelbg1' : 0,
@@ -45,7 +43,6 @@ ENTITY_HEALTH = {
     'Enemy3' : 125,
     'Enemy3Shot': 1,
     'Asteroid' : 999,
-
 }
 
 ENTITY_SCORE = {
@@ -85,7 +82,6 @@ ENTITY_SPEED = {
     'Enemy2Shot': 3,
     'Enemy3' : 1,
     'Enemy3Shot' : 2,
-
 }
 
 ENTITY_SHOT_DELAY = {
@@ -95,8 +91,6 @@ ENTITY_SHOT_DELAY = {
     'Enemy2': 80,
     'Enemy3': 100,
 }
-
-
 
 # M
 MENU_OPTION = ('NEW GAME 1P',
@@ -134,4 +128,4 @@ SCORE_POS = {'Title': (160, 40),
              7: (WIN_WIDTH / 2, 240),
              8: (WIN_WIDTH / 2, 260),
              9: (WIN_WIDTH / 2, 280),
-             }
+}

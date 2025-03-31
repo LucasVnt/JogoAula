@@ -23,9 +23,10 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(30, 'CONGRATS!!', (245, 245, 245), SCORE_POS['Title'])
+            text = 'Enter P1 ID (4 CHARS):'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-                text = 'Enter P1 ID (4 CHARS):'
             if game_mode == MENU_OPTION[1]:
                 if player_score[0] >= player_score[1]:
                     score = player_score[0]
@@ -66,7 +67,7 @@ class Score:
 
         for player_score in list_score:
             id_, name, score = player_score
-            self.score_text(20, f'{name}    {score :05d}', (150, 150, 150), SCORE_POS[list_score.index(player_score)])
+            self.score_text(20, f'{name}    {score:05d}', (150, 150, 150), SCORE_POS[list_score.index(player_score)])
 
         while True:
             for event in pygame.event.get():
